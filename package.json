@@ -1,0 +1,36 @@
+{
+  "name": "companion-tiles",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Live Companion image buttons for Open Stage Control, with an independent bridge and simulator.",
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": "./src/widgets.mjs",
+  "files": [
+    "src",
+    "examples",
+    "scripts",
+    "README.md",
+    "BINDINGS.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md",
+    "test",
+    "CONTRIBUTING.md"
+  ],
+  "scripts": {
+    "start": "node src/server.mjs --config examples/config.json",
+    "test": "node --test test/*.test.mjs",
+    "build": "node scripts/build-example.mjs",
+    "check": "npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jquyatt/companion-tiles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jquyatt/companion-tiles/issues"
+  }
+}

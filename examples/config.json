@@ -1,0 +1,8 @@
+{
+  "mode": "simulator",
+  "port": 16650,
+  "buttons": [
+    {"id": "demo_one", "label": "Demo One", "location": "1/0/0"},
+    {"id": "demo_two", "label": "Demo Two", "location": "1/0/1"}
+  ]
+}

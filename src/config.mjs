@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+export function validateConfig(input){
+ if(!input||!['simulator','live'].includes(input.mode))throw Error('mode must be simulator or live');
+ if(!Array.isArray(input.buttons)||!input.buttons.length||input.buttons.length>128)throw Error('Configure 1–128 buttons');
+ const ids=new Set(),locations=new Set(),namespaces=new Set();const buttons=input.buttons.map(b=>{if(!/^[a-zA-Z][\w-]{0,63}$/.test(b.id||'')||ids.has(b.id))throw Error('Button ids must be unique safe identifiers');ids.add(b.id);if(!/^\d+\/\d+\/\d+$/.test(b.location||''))throw Error('Use page/row/column locations');const [p,r,c]=b.location.split('/').map(Number);if(p<1||p>999||r<0||r>99||c<0||c>99)throw Error('Location out of range');if(locations.has(b.location))throw Error('Duplicate physical locations are not allowed');locations.add(b.location);const namespace=b.namespace||'/companion-tiles/'+b.id;if(!/^\/(?:[\w-]+\/)*[\w-]+$/.test(namespace)||namespaces.has(namespace))throw Error('Invalid or duplicate namespace');namespaces.add(namespace);return {id:b.id,location:b.location,namespace,label:String(b.label||b.location).slice(0,80)};});
+ let companionUrl;if(input.mode==='live'){const url=new URL(input.companionUrl);if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.pathname!=='/'||url.search||url.hash)throw Error('Use a Companion HTTP origin without credentials or a path');companionUrl=url.origin;}
+ const port=input.port??16650;if(!Number.isInteger(port)||port<1024||port>65535)throw Error('Invalid port');return {mode:input.mode,companionUrl,port,buttons};
+}

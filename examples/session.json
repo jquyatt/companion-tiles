@@ -1,0 +1,120 @@
+{
+  "version": "1.31.1",
+  "type": "session",
+  "content": {
+    "type": "root",
+    "id": "root",
+    "layout": "vertical",
+    "colorBg": "#121923",
+    "colorWidget": "#53b7dc",
+    "widgets": [
+      {
+        "type": "text",
+        "id": "status",
+        "address": "/companion-tiles/status",
+        "value": "Companion Tiles · connecting",
+        "bypass": true,
+        "height": 40
+      },
+      {
+        "type": "panel",
+        "id": "tiles",
+        "layout": "horizontal",
+        "scroll": true,
+        "height": 164,
+        "widgets": [
+          {
+            "type": "panel",
+            "id": "demo_one",
+            "width": 144,
+            "height": 144,
+            "layout": "default",
+            "widgets": [
+              {
+                "type": "text",
+                "id": "demo_one_fallback",
+                "top": 0,
+                "left": 0,
+                "width": "100%",
+                "height": "100%",
+                "value": "Demo One",
+                "bypass": true
+              },
+              {
+                "type": "image",
+                "id": "demo_one_image",
+                "top": 0,
+                "left": 0,
+                "width": "100%",
+                "height": "100%",
+                "address": "/companion-tiles/demo_one/image",
+                "bypass": true,
+                "size": "contain",
+                "css": "pointer-events:none;"
+              },
+              {
+                "type": "button",
+                "id": "demo_one_press",
+                "top": 0,
+                "left": 0,
+                "width": "100%",
+                "height": "100%",
+                "address": "/companion-tiles/demo_one/press",
+                "mode": "push",
+                "label": "Demo One",
+                "interaction": "OSC{/companion-tiles/demo_one/enabled, 0}",
+                "css": "opacity:0;",
+                "comments": "Full-image native push/release target. Keep all child ids unique."
+              }
+            ]
+          },
+          {
+            "type": "panel",
+            "id": "demo_two",
+            "width": 144,
+            "height": 144,
+            "layout": "default",
+            "widgets": [
+              {
+                "type": "text",
+                "id": "demo_two_fallback",
+                "top": 0,
+                "left": 0,
+                "width": "100%",
+                "height": "100%",
+                "value": "Demo Two",
+                "bypass": true
+              },
+              {
+                "type": "image",
+                "id": "demo_two_image",
+                "top": 0,
+                "left": 0,
+                "width": "100%",
+                "height": "100%",
+                "address": "/companion-tiles/demo_two/image",
+                "bypass": true,
+                "size": "contain",
+                "css": "pointer-events:none;"
+              },
+              {
+                "type": "button",
+                "id": "demo_two_press",
+                "top": 0,
+                "left": 0,
+                "width": "100%",
+                "height": "100%",
+                "address": "/companion-tiles/demo_two/press",
+                "mode": "push",
+                "label": "Demo Two",
+                "interaction": "OSC{/companion-tiles/demo_two/enabled, 0}",
+                "css": "opacity:0;",
+                "comments": "Full-image native push/release target. Keep all child ids unique."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+Companion Tiles
+Copyright (C) 2026 jquyatt and contributors
+GPL-3.0-or-later.
+
+Independent integration using public Open Stage Control custom-module/Canvas APIs and Companion HTTP/tRPC interfaces. No upstream application source or assets are bundled.
+Open Stage Control: https://framagit.org/jean-emmanuel/open-stage-control
+Bitfocus Companion: https://github.com/bitfocus/companion
+The project is not affiliated with or endorsed by either upstream.

@@ -1,0 +1,5 @@
+node_modules/
+*.tgz
+local-config.json
+local-session.json
+.DS_Store
