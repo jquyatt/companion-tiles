@@ -1,13 +1,17 @@
 {
   "name": "companion-tiles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Live Companion image buttons for Open Stage Control, with an independent bridge and simulator.",
   "license": "GPL-3.0-or-later",
   "engines": {
     "node": ">=22"
   },
-  "exports": "./src/widgets.mjs",
+  "exports": {
+    ".": "./src/widgets.mjs",
+    "./client": "./src/client.mjs",
+    "./sse": "./src/sse.mjs"
+  },
   "files": [
     "src",
     "examples",
